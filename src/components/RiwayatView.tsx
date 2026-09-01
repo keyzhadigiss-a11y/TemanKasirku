@@ -7,9 +7,11 @@ import {
   Coins, 
   ChevronRight, 
   CheckCircle2, 
-  Coffee, 
-  Croissant, 
-  IceCream2, 
+  Sparkles, 
+  Sun, 
+  Moon, 
+  Droplets,
+  Heart,
   ShoppingBag,
   Share2, 
   Printer,
@@ -95,14 +97,20 @@ export const RiwayatView: React.FC<RiwayatViewProps> = ({
 
   const getItemIcon = (name: string) => {
     const lower = name.toLowerCase();
-    if (lower.includes('kopi') || lower.includes('cappuccino') || lower.includes('latte') || lower.includes('matcha')) {
-      return <Coffee className="w-4 h-4 text-[#7e7576]" />;
+    if (lower.includes('moisturizer') || lower.includes('gel') || lower.includes('cream')) {
+      return <Droplets className="w-4 h-4 text-[#805062]" />;
     }
-    if (lower.includes('croissant') || lower.includes('cake') || lower.includes('roti') || lower.includes('pastry')) {
-      return <Croissant className="w-4 h-4 text-[#7e7576]" />;
+    if (lower.includes('sunscreen') || lower.includes('uv') || lower.includes('spf')) {
+      return <Sun className="w-4 h-4 text-amber-600" />;
     }
-    if (lower.includes('gelato') || lower.includes('ice') || lower.includes('snack')) {
-      return <IceCream2 className="w-4 h-4 text-[#7e7576]" />;
+    if (lower.includes('serum')) {
+      return <Sparkles className="w-4 h-4 text-purple-600" />;
+    }
+    if (lower.includes('mask') || lower.includes('sleeping')) {
+      return <Moon className="w-4 h-4 text-indigo-600" />;
+    }
+    if (lower.includes('lip') || lower.includes('tint') || lower.includes('plump')) {
+      return <Heart className="w-4 h-4 text-rose-600" />;
     }
     return <ShoppingBag className="w-4 h-4 text-[#7e7576]" />;
   };

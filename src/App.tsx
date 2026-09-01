@@ -21,10 +21,13 @@ export default function App() {
 
   // Products State with localStorage fallback
   const [products, setProducts] = useState<Product[]>(() => {
-    const saved = localStorage.getItem('kasirku_products');
+    const saved = localStorage.getItem('kasirku_skincare_products');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0 && parsed[0].category !== 'Kopi') {
+          return parsed;
+        }
       } catch {
         return INITIAL_PRODUCTS;
       }
@@ -34,10 +37,13 @@ export default function App() {
 
   // Transactions State with localStorage fallback
   const [transactions, setTransactions] = useState<Transaction[]>(() => {
-    const saved = localStorage.getItem('kasirku_transactions');
+    const saved = localStorage.getItem('kasirku_skincare_transactions');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          return parsed;
+        }
       } catch {
         return INITIAL_TRANSACTIONS;
       }
@@ -54,12 +60,12 @@ export default function App() {
 
   // Sync products to localStorage
   useEffect(() => {
-    localStorage.setItem('kasirku_products', JSON.stringify(products));
+    localStorage.setItem('kasirku_skincare_products', JSON.stringify(products));
   }, [products]);
 
   // Sync transactions to localStorage
   useEffect(() => {
-    localStorage.setItem('kasirku_transactions', JSON.stringify(transactions));
+    localStorage.setItem('kasirku_skincare_transactions', JSON.stringify(transactions));
   }, [transactions]);
 
   // Handler: Add product

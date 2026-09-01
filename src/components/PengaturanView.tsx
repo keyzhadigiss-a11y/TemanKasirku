@@ -3,11 +3,13 @@ import { Settings, Store, Printer, Percent, ShieldCheck, Save, Check } from 'luc
 import { ASSETS } from '../data/mockData';
 
 export const PengaturanView: React.FC = () => {
-  const [storeName, setStoreName] = useState('KASIRKU POS');
+  const [storeName, setStoreName] = useState('KASIRKU Skincare POS');
+  const [founderName, setFounderName] = useState('Keyzha');
+  const [founderRole, setFounderRole] = useState('Founder & Owner');
   const [storeAddress, setStoreAddress] = useState('Jl. Melati No. 45, Jakarta Selatan');
-  const [storePhone, setStorePhone] = useState('(021) 789-0123');
-  const [taxPercent, setTaxPercent] = useState(10);
-  const [receiptFooter, setReceiptFooter] = useState('Terima Kasih Atas Kunjungan Anda!');
+  const [storePhone, setStorePhone] = useState('(021) 789-0123 / WA: 0812-9876-5432');
+  const [taxPercent, setTaxPercent] = useState(0);
+  const [receiptFooter, setReceiptFooter] = useState('Terima Kasih! Glow Up Bersama KASIRKU Skincare by Keyzha ✨');
   const [saved, setSaved] = useState(false);
 
   const handleSave = (e: React.FormEvent) => {
@@ -24,11 +26,48 @@ export const PengaturanView: React.FC = () => {
           Pengaturan Toko & POS
         </h2>
         <p className="text-sm text-[#4c4546] mt-0.5">
-          Konfigurasi identitas toko, format pencetakan struk, dan perpajakan.
+          Kelola profil toko, identitas Founder Keyzha, format struk, dan kamera barcode scanner.
         </p>
       </div>
 
       <form onSubmit={handleSave} className="space-y-6">
+        {/* Founder Profile Card */}
+        <div className="bg-white p-6 rounded-2xl border border-[#EEEEEE] shadow-xs space-y-4">
+          <div className="flex items-center gap-3 pb-3 border-b border-gray-100">
+            <div className="p-2.5 bg-[#fec1d6]/30 text-[#805062] rounded-xl">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <div>
+              <h3 className="font-bold text-base text-[#1b1c1c]">Profil Founder & Manajemen</h3>
+              <p className="text-xs text-gray-500">Identitas pemilik/manajer sistem POS.</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">
+                Nama Founder / Manager
+              </label>
+              <input
+                type="text"
+                value={founderName}
+                onChange={(e) => setFounderName(e.target.value)}
+                className="w-full px-3.5 py-2.5 border border-[#cfc4c5] rounded-xl text-sm focus:outline-none focus:border-[#805062]"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-1">
+                Jabatan / Hak Akses
+              </label>
+              <input
+                type="text"
+                value={founderRole}
+                onChange={(e) => setFounderRole(e.target.value)}
+                className="w-full px-3.5 py-2.5 border border-[#cfc4c5] rounded-xl text-sm focus:outline-none focus:border-[#805062]"
+              />
+            </div>
+          </div>
+        </div>
         {/* Store Profile Card */}
         <div className="bg-white p-6 rounded-2xl border border-[#EEEEEE] shadow-xs space-y-4">
           <div className="flex items-center gap-3 pb-3 border-b border-gray-100">

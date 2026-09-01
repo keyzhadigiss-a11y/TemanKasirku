@@ -146,18 +146,27 @@ export const TopNav: React.FC<TopNavProps> = ({
               setShowProfileMenu(!showProfileMenu);
               setShowNotifications(false);
             }}
-            className="flex items-center gap-2 p-1 pl-1.5 pr-2 rounded-full hover:bg-[#F5F3F3] transition-colors border border-transparent hover:border-[#EEEEEE]"
+            className="flex items-center gap-2 p-1 pl-1.5 pr-2.5 rounded-full hover:bg-[#ffd9e4]/30 transition-colors border border-transparent hover:border-[#cfc4c5]"
           >
-            <div className="h-8 w-8 rounded-full overflow-hidden border border-[#cfc4c5] shrink-0">
+            <div className="h-8 w-8 rounded-full overflow-hidden border-2 border-[#805062] shrink-0 shadow-2xs">
               <img
                 src={ASSETS.profileAvatar}
-                alt="Profile Kasir"
+                alt="Profile Keyzha Founder"
                 className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
               />
             </div>
             <div className="hidden lg:flex flex-col text-left">
-              <span className="text-xs font-bold text-[#1b1c1c]">Kasir 1</span>
-              <span className="text-[10px] text-[#805062] font-medium">Online</span>
+              <div className="flex items-center gap-1">
+                <span className="text-xs font-bold text-[#1b1c1c]">Keyzha</span>
+                <span className="text-[9px] bg-[#ffd9e4] text-[#805062] font-extrabold px-1.5 py-0.2 rounded-full uppercase tracking-wider">
+                  Founder
+                </span>
+              </div>
+              <span className="text-[10px] text-emerald-600 font-semibold flex items-center gap-1">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Owner &bull; Online
+              </span>
             </div>
             <ChevronDown className="w-3.5 h-3.5 text-gray-400 hidden lg:block" />
           </button>
@@ -166,20 +175,26 @@ export const TopNav: React.FC<TopNavProps> = ({
           {showProfileMenu && (
             <div
               id="profile-dropdown-menu"
-              className="absolute right-0 mt-2 w-52 bg-white rounded-xl shadow-xl border border-[#EEEEEE] p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+              className="absolute right-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl border border-[#EEEEEE] p-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
             >
-              <div className="px-3 py-2 border-b border-gray-100">
-                <p className="text-xs font-bold text-gray-900">Siti Rahayu</p>
-                <p className="text-[11px] text-gray-500">kasir1@kindredpos.id</p>
+              <div className="px-3 py-2.5 border-b border-gray-100 bg-[#FBF9F8] rounded-xl mb-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="text-xs font-bold text-gray-900">Keyzha</p>
+                  <span className="text-[9px] bg-[#805062] text-white font-bold px-1.5 py-0.2 rounded">
+                    Founder
+                  </span>
+                </div>
+                <p className="text-[11px] text-gray-500 truncate">keyzhadigiss@gmail.com</p>
+                <p className="text-[10px] text-[#805062] font-semibold mt-0.5">KASIRKU POS Skincare</p>
               </div>
-              <div className="py-1 text-xs text-gray-700">
-                <button className="w-full text-left px-3 py-2 rounded-md hover:bg-gray-100">
-                  Profil Saya
+              <div className="py-1 text-xs text-gray-700 space-y-0.5">
+                <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 font-medium">
+                  Profil Founder
                 </button>
-                <button className="w-full text-left px-3 py-2 rounded-md hover:bg-gray-100">
-                  Buka/Tutup Kasir
+                <button className="w-full text-left px-3 py-2 rounded-lg hover:bg-gray-100 font-medium">
+                  Manajemen Shift Kasir
                 </button>
-                <button className="w-full text-left px-3 py-2 rounded-md text-red-600 hover:bg-red-50">
+                <button className="w-full text-left px-3 py-2 rounded-lg text-red-600 hover:bg-red-50 font-medium">
                   Keluar
                 </button>
               </div>

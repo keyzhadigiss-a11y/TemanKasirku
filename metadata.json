@@ -1,6 +1,6 @@
 {
   "name": "KASIRKU - POS System",
-  "description": "Aplikasi POS Kasir Modern dengan Dashboard, Kasir POS, Manajemen Produk, dan Riwayat Penjualan.",
-  "requestFramePermissions": [],
+  "description": "Aplikasi POS Kasir Modern Skincare & Beauty Care dengan Barcode Scanner Kamera, Manajemen Produk, Best Seller, Paket Hemat, dan Riwayat Penjualan.",
+  "requestFramePermissions": ["camera"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

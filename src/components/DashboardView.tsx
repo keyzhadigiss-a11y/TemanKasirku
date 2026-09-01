@@ -33,11 +33,17 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
       {/* Header Section */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[#1b1c1c]">
-            Ringkasan Hari Ini
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#ffd9e4] text-[#805062]">
+              👑 Founder Workspace
+            </span>
+            <span className="text-xs text-gray-500 font-medium">KASIRKU Skincare POS</span>
+          </div>
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-[#1b1c1c] mt-1">
+            Halo, Keyzha! ✨
           </h2>
-          <p className="text-sm md:text-base text-[#4c4546] mt-1">
-            Selamat datang kembali! Ini performa bisnismu hari ini.
+          <p className="text-sm md:text-base text-[#4c4546] mt-0.5">
+            Selamat datang kembali di sistem kasir & penjualan skincare tokomu hari ini.
           </p>
         </div>
 

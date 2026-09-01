@@ -15,8 +15,20 @@ export interface Product {
   category: string;
   price: number;
   stock: number;
-  image?: string;
-  description?: string;
+  image: string;
+  description: string;
+  isBestSeller?: boolean;
+  isBundle?: boolean;
+  bundleItems?: string[];
+  benefits?: string[];
+  keyIngredients?: string;
+  howToUse?: string;
+  volume?: string;
+  rating?: number;
+  reviewCount?: number;
+  shadeColor?: string;
+  shadeName?: string;
+  packageColor?: string;
 }
 
 export interface CartItem {

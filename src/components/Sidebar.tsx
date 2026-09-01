@@ -150,15 +150,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
           })}
         </nav>
 
-        {/* Bottom Navigation: Settings */}
-        <div className="px-3 pt-2 mt-auto border-t border-[#EEEEEE]">
+        {/* Bottom Navigation: Settings & Founder Profile */}
+        <div className="px-3 pt-2 mt-auto border-t border-[#EEEEEE] space-y-2">
           <button
             id="sidebar-nav-pengaturan"
             onClick={() => {
               setActiveTab('pengaturan');
               setMobileOpen?.(false);
             }}
-            className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors text-left ${
+            className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-colors text-left ${
               activeTab === 'pengaturan'
                 ? 'bg-[#fec1d6]/25 text-[#805062] font-semibold border-l-4 border-[#805062] rounded-l-none pl-3'
                 : 'text-[#4c4546] hover:bg-[#F5F3F3] hover:text-[#1b1c1c]'
@@ -167,6 +167,27 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <Settings className={`w-5 h-5 ${activeTab === 'pengaturan' ? 'text-[#805062]' : 'text-[#7e7576]'}`} />
             <span>Pengaturan</span>
           </button>
+
+          {/* Founder Keyzha Info Badge */}
+          <div className="p-2.5 rounded-2xl bg-gradient-to-r from-[#ffd9e4]/30 to-[#fec1d6]/20 border border-[#fec1d6]/40 flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-full overflow-hidden border border-[#805062] shrink-0">
+              <img
+                src={ASSETS.profileAvatar}
+                alt="Keyzha Founder"
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-xs text-[#1b1c1c] truncate">Keyzha</span>
+                <span className="text-[9px] bg-[#805062] text-white font-extrabold px-1.5 py-0.2 rounded-full">
+                  Founder
+                </span>
+              </div>
+              <p className="text-[10px] text-[#805062] truncate font-medium">Owner &bull; KASIRKU POS</p>
+            </div>
+          </div>
         </div>
       </aside>
     </>
