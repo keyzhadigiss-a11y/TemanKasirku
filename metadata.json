@@ -1,0 +1,6 @@
+{
+  "name": "KASIRKU - POS System",
+  "description": "Aplikasi POS Kasir Modern dengan Dashboard, Kasir POS, Manajemen Produk, dan Riwayat Penjualan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
